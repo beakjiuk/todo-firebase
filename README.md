@@ -2,7 +2,7 @@
 
 **라이브 배포:** [https://todo-firebase-jmp8fdjew-beakjiuks-projects.vercel.app/](https://todo-firebase-jmp8fdjew-beakjiuks-projects.vercel.app/)
 
-Firebase 인증·Realtime Database를 쓰는 정적 웹앱입니다. 할 일(달력), 노트, 가계부, 통합 검색, 마이페이지를 제공합니다.
+Firebase 인증·Realtime Database를 쓰는 정적 웹앱입니다. 할 일(달력), 가계부, 노트, 통합 검색, 마이페이지를 제공합니다.
 
 ## 기술 스택
 

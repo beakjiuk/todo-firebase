@@ -3,7 +3,7 @@ import { ref, push, onValue, remove } from "https://www.gstatic.com/firebasejs/1
 import { auth, db } from "./firebase-init.js";
 import { firebaseConfig } from "./firebase-config.js";
 import { isConfiguredFirebase } from "./validators.js";
-import { syncSidebarUserChip, initSidebarToggle } from "./sidebar-sync.js";
+import { syncSidebarUserChip, initSidebarToggle, clearSidebarProfileCache } from "./sidebar-sync.js";
 import { initSidebarSearch } from "./sidebar-search.js";
 
 const CAT_INCOME = ["급여", "용돈", "부수입", "이자·배당", "기타"];
@@ -306,6 +306,7 @@ ledgerNextMonth?.addEventListener("click", () => {
 });
 
 btnLogout?.addEventListener("click", async () => {
+  clearSidebarProfileCache(auth.currentUser?.uid);
   await signOut(auth);
   window.location.href = "login.html";
 });

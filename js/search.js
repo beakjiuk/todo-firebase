@@ -3,7 +3,7 @@ import { ref, get, onValue } from "https://www.gstatic.com/firebasejs/12.11.0/fi
 import { auth, db } from "./firebase-init.js";
 import { firebaseConfig } from "./firebase-config.js";
 import { isConfiguredFirebase } from "./validators.js";
-import { syncSidebarUserChip, initSidebarToggle } from "./sidebar-sync.js";
+import { syncSidebarUserChip, initSidebarToggle, clearSidebarProfileCache } from "./sidebar-sync.js";
 import { initSidebarSearch, syncSidebarSearchFromQuery } from "./sidebar-search.js";
 
 const btnLogout = document.getElementById("btnLogout");
@@ -166,6 +166,7 @@ function queryFromUrl() {
 }
 
 btnLogout?.addEventListener("click", async () => {
+  clearSidebarProfileCache(auth.currentUser?.uid);
   await signOut(auth);
   window.location.href = "login.html";
 });

@@ -9,7 +9,7 @@ import {
 import { auth, db } from "./firebase-init.js";
 import { firebaseConfig } from "./firebase-config.js";
 import { isConfiguredFirebase } from "./validators.js";
-import { syncSidebarUserChip, initSidebarToggle } from "./sidebar-sync.js";
+import { syncSidebarUserChip, initSidebarToggle, clearSidebarProfileCache } from "./sidebar-sync.js";
 import { initSidebarSearch } from "./sidebar-search.js";
 
 const calGrid = document.getElementById("calGrid");
@@ -285,6 +285,7 @@ nextMonth?.addEventListener("click", () => {
 });
 
 btnLogout?.addEventListener("click", async () => {
+  clearSidebarProfileCache(auth.currentUser?.uid);
   await signOut(auth);
   window.location.href = "login.html";
 });

@@ -10,7 +10,7 @@ import { ref, onValue, set, remove } from "https://www.gstatic.com/firebasejs/12
 import { auth, db } from "./firebase-init.js";
 import { firebaseConfig } from "./firebase-config.js";
 import { isConfiguredFirebase, isValidNickname } from "./validators.js";
-import { syncSidebarUserChip, initSidebarToggle } from "./sidebar-sync.js";
+import { syncSidebarUserChip, initSidebarToggle, clearSidebarProfileCache } from "./sidebar-sync.js";
 import { initSidebarSearch } from "./sidebar-search.js";
 import { resolveProfilePhotoUrl } from "./photo-url.js";
 
@@ -134,6 +134,7 @@ if (!isConfiguredFirebase(firebaseConfig)) {
 }
 
 btnLogout?.addEventListener("click", async () => {
+  clearSidebarProfileCache(auth.currentUser?.uid);
   await signOut(auth);
   window.location.href = "login.html";
 });

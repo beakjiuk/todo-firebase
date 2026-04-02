@@ -3,7 +3,7 @@ import { ref, push, onValue, remove, update } from "https://www.gstatic.com/fire
 import { auth, db } from "./firebase-init.js";
 import { firebaseConfig } from "./firebase-config.js";
 import { isConfiguredFirebase } from "./validators.js";
-import { syncSidebarUserChip, initSidebarToggle } from "./sidebar-sync.js";
+import { syncSidebarUserChip, initSidebarToggle, clearSidebarProfileCache } from "./sidebar-sync.js";
 import { initSidebarSearch } from "./sidebar-search.js";
 
 const notesList = document.getElementById("notesList");
@@ -137,6 +137,7 @@ function attachNotes(uid) {
 
 btnNewNote?.addEventListener("click", () => openNoteModal(true, null));
 btnLogout?.addEventListener("click", async () => {
+  clearSidebarProfileCache(auth.currentUser?.uid);
   await signOut(auth);
   window.location.href = "login.html";
 });
