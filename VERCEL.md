@@ -1,5 +1,12 @@
 # Vercel 배포
 
+## 내 사이트 주소(링크) 어디서 보는지
+
+- **Deployments** 탭에서 최근 배포 한 줄을 누르면 **Deployment Details**가 열립니다.  
+  그 안 **Domains**에 `…vercel.app` 주소가 여러 개 보일 수 있어요(프로덕션·프리뷰 등).
+- 또는 왼쪽 메뉴 **Domains**에서 프로젝트에 연결된 대표 도메인을 볼 수 있습니다.
+- Firebase **승인된 도메인**에는 실제로 배포가 성공한 뒤 접속할 주소를 넣으면 됩니다(예: `todo-firebase-xxx.vercel.app`).
+
 ## 프로젝트 설정
 
 1. [Vercel](https://vercel.com)에서 GitHub 저장소를 import 합니다.
