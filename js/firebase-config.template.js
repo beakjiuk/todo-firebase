@@ -5,7 +5,7 @@
  * 이름: FIREBASE_API_KEY, FIREBASE_AUTH_DOMAIN, FIREBASE_PROJECT_ID,
  *       FIREBASE_STORAGE_BUCKET, FIREBASE_MESSAGING_SENDER_ID, FIREBASE_APP_ID,
  *       FIREBASE_DATABASE_URL
- * 자세한 설정: 저장소 루트의 VERCEL.md
+ * 배포·환경 변수: README.md 참고
  */
 export const firebaseConfig = {
   apiKey: "YOUR_API_KEY",
