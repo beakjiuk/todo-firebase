@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>로그인 — 일정관리앱</title>
+    <link rel="stylesheet" href="css/auth.css" />
+  </head>
+  <body class="auth-body">
+    <div class="auth-layout">
+      <div class="auth-card">
+        <h1>로그인</h1>
+        <p class="sub">이메일 형식만 맞으면 됩니다. 가짜 주소도 괜찮아요.</p>
+        <div id="configBanner" class="config-error-banner">
+          <code>js/firebase-config.js</code>에 본인 프로젝트 값을 넣어 주세요.
+        </div>
+        <div id="authErr" class="auth-error"></div>
+        <form id="form">
+          <div class="auth-field">
+            <label for="email">이메일</label>
+            <input id="email" name="email" type="text" inputmode="email" autocomplete="username" required />
+          </div>
+          <div class="auth-field">
+            <label for="password">비밀번호</label>
+            <input id="password" name="password" type="password" autocomplete="current-password" required />
+          </div>
+          <button type="submit" class="btn-auth" id="submitBtn">들어가기</button>
+        </form>
+        <div class="auth-footer">
+          계정이 없나요? <a href="signup.html">회원가입</a>
+          · <a href="index.html">처음으로</a>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="js/login.js"></script>
+  </body>
+</html>

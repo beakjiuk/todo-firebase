@@ -1,0 +1,402 @@
+:root {
+  --video-bg: #0b1020;
+  --hero-bg-1: #eef2ff;
+  --hero-bg-2: #e0f2fe;
+  --hero-ink: #0f172a;
+  --hero-muted: #475569;
+  --hero-accent: #6366f1;
+  --hero-accent-2: #0ea5e9;
+  --hero-btn: linear-gradient(135deg, #6366f1, #4338ca);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body.landing-body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: "Pretendard", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+  background: var(--video-bg);
+}
+
+/* ========== 유튜브 인트로 ========== */
+.video-intro {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1rem 1.75rem;
+  background: radial-gradient(ellipse 80% 60% at 50% 20%, rgba(99, 102, 241, 0.2), transparent),
+    var(--video-bg);
+}
+
+.video-intro.is-hidden {
+  display: none !important;
+}
+
+.video-intro__stack {
+  width: min(96vw, 1040px);
+  margin: 0 auto;
+}
+
+.video-intro__toolbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 0.5rem;
+}
+
+.video-intro__frame {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.video-intro__frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.video-intro__hint {
+  margin: 0.85rem 0 0;
+  max-width: 40rem;
+  text-align: center;
+  font-size: 0.82rem;
+  color: rgba(226, 232, 240, 0.72);
+  line-height: 1.45;
+}
+
+.video-intro__skip {
+  position: relative;
+  min-height: 44px;
+  min-width: 4.75rem;
+  padding: 0.5rem 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.82);
+  color: #f8fafc;
+  font-size: 1rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.video-intro__skip:hover {
+  background: rgba(99, 102, 241, 0.4);
+  border-color: rgba(129, 140, 248, 0.55);
+}
+
+.video-intro__skip:active {
+  transform: scale(0.97);
+}
+
+/* ========== 메인 랜딩 (데일리메이트 느낌 X — 블루/인디고 톤) ========== */
+.main-landing {
+  min-height: 100vh;
+  background: radial-gradient(ellipse 90% 70% at 15% 20%, rgba(99, 102, 241, 0.15), transparent 50%),
+    radial-gradient(ellipse 70% 50% at 90% 10%, rgba(14, 165, 233, 0.14), transparent 45%),
+    linear-gradient(165deg, var(--hero-bg-1), var(--hero-bg-2) 48%, #f8fafc);
+}
+
+.main-landing.is-hidden {
+  display: none !important;
+}
+
+.hero {
+  max-width: 1100px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 2rem;
+  padding: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+@media (min-width: 860px) {
+  .hero {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: 3rem;
+  }
+}
+
+.hero-visual {
+  position: relative;
+  min-height: clamp(280px, 42vw, 420px);
+  order: 0;
+}
+
+.hero-deco {
+  position: absolute;
+  inset: 8% 6% auto 4%;
+  bottom: 12%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0)),
+    linear-gradient(135deg, rgba(99, 102, 241, 0.12), rgba(14, 165, 233, 0.1));
+  border-radius: 48% 52% 55% 45% / 48% 45% 55% 52%;
+  filter: blur(0);
+  opacity: 0.9;
+}
+
+.hero-card-ui {
+  position: absolute;
+  left: 14%;
+  top: 18%;
+  width: min(52%, 240px);
+  aspect-ratio: 4 / 3.2;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 24px 50px rgba(15, 23, 42, 0.12);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  padding: 1rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  z-index: 1;
+}
+
+.hero-card-ui__check {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.hero-card-ui__check::after {
+  content: "";
+  position: absolute;
+  left: 11px;
+  top: 8px;
+  width: 10px;
+  height: 16px;
+  border: solid #fff;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+.hero-card-ui__line {
+  height: 10px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #c7d2fe, #e0e7ff);
+}
+
+.hero-card-ui__line--short {
+  width: 72%;
+}
+
+.hero-character-wrap {
+  position: absolute;
+  right: 4%;
+  bottom: 0;
+  z-index: 2;
+  transform: translateX(40px);
+  opacity: 0;
+}
+
+.main-landing.is-active .hero-character-wrap {
+  animation: hero-enter 1.15s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes hero-enter {
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.hero-character {
+  filter: drop-shadow(12px 18px 0 rgba(15, 23, 42, 0.06));
+}
+
+.hero-character__bob {
+  animation: bob 2.4s ease-in-out infinite;
+}
+
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.hero-character .swing-l {
+  animation: leg-swing 0.5s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+.hero-character .swing-r {
+  animation: leg-swing 0.5s ease-in-out infinite reverse;
+  transform-origin: top center;
+}
+
+@keyframes leg-swing {
+  0%,
+  100% {
+    transform: rotate(-12deg);
+  }
+  50% {
+    transform: rotate(12deg);
+  }
+}
+
+.hero-character .wave-arm {
+  animation: wave-arm 2.8s ease-in-out infinite;
+  transform-origin: 70px 78px;
+}
+
+@keyframes wave-arm {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-8deg);
+  }
+  50% {
+    transform: rotate(6deg);
+  }
+}
+
+.main-landing.is-active .hero-card-ui {
+  animation: card-pop 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+}
+
+@keyframes card-pop {
+  from {
+    transform: translateY(18px) scale(0.96);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.hero-copy {
+  order: 1;
+}
+
+@media (min-width: 860px) {
+  .hero-copy {
+    order: unset;
+  }
+}
+
+.hero-title {
+  margin: 0 0 1rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.18;
+  color: var(--hero-ink);
+}
+
+.hero-title__line {
+  display: block;
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+.main-landing.is-active .hero-title__a {
+  animation: line-in 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.5s forwards;
+}
+
+.main-landing.is-active .hero-title__b {
+  animation: line-in 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.85s forwards;
+  font-size: clamp(2rem, 6vw, 3.15rem);
+  background: linear-gradient(115deg, var(--hero-accent), var(--hero-accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-top: 0.2rem;
+}
+
+@keyframes line-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-title__a {
+  font-size: clamp(1.55rem, 4.2vw, 2.25rem);
+}
+
+.hero-sub {
+  margin: 0 0 1.5rem;
+  font-size: 1.05rem;
+  color: var(--hero-muted);
+  line-height: 1.6;
+  max-width: 28rem;
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.main-landing.is-active .hero-sub {
+  animation: line-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) 1.05s forwards;
+}
+
+.btn-hero {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.95rem 1.85rem;
+  border-radius: 999px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  text-decoration: none;
+  color: #fff;
+  background: var(--hero-btn);
+  box-shadow: 0 18px 40px rgba(67, 56, 202, 0.35);
+  opacity: 0;
+  transform: translateY(14px);
+  transition: transform 0.15s ease, filter 0.15s ease, box-shadow 0.15s ease;
+}
+
+.main-landing.is-active .btn-hero {
+  animation: line-in 0.75s cubic-bezier(0.22, 1, 0.36, 1) 1.25s forwards;
+}
+
+.btn-hero:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+  box-shadow: 0 22px 48px rgba(67, 56, 202, 0.42);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-character-wrap,
+  .hero-card-ui,
+  .hero-title__line,
+  .hero-sub,
+  .btn-hero {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .hero-character__bob,
+  .hero-character .swing-l,
+  .hero-character .swing-r,
+  .hero-character .wave-arm {
+    animation: none !important;
+  }
+}

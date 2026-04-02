@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입 — 일정관리앱</title>
+    <link rel="stylesheet" href="css/auth.css" />
+  </head>
+  <body class="auth-body">
+    <div class="auth-layout">
+      <div class="auth-card">
+        <h1>회원가입</h1>
+        <p class="sub">
+          실제 메일이 아니어도 됩니다. 닉네임은 앱 왼쪽 상단과 프로필에 표시돼요.
+        </p>
+        <div id="configBanner" class="config-error-banner">
+          <code>js/firebase-config.js</code>에 본인 프로젝트 값을 넣어 주세요.
+        </div>
+        <div id="authErr" class="auth-error"></div>
+        <form id="form">
+          <div class="auth-field">
+            <label for="email">이메일 형식</label>
+            <input id="email" name="email" type="text" inputmode="email" autocomplete="username" required />
+          </div>
+          <div class="auth-field">
+            <label for="nickname">닉네임 (2~20자)</label>
+            <input
+              id="nickname"
+              name="nickname"
+              type="text"
+              autocomplete="nickname"
+              minlength="2"
+              maxlength="20"
+              required
+              placeholder="앱에서 보일 이름"
+            />
+          </div>
+          <div class="auth-field">
+            <label for="password">비밀번호 (6자 이상)</label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              autocomplete="new-password"
+              minlength="6"
+              required
+            />
+          </div>
+          <div class="auth-field">
+            <label for="password2">비밀번호 확인</label>
+            <input
+              id="password2"
+              name="password2"
+              type="password"
+              autocomplete="new-password"
+              minlength="6"
+              required
+            />
+          </div>
+          <button type="submit" class="btn-auth" id="submitBtn">가입하기</button>
+        </form>
+        <div class="auth-footer">
+          이미 있나요? <a href="login.html">로그인</a>
+          · <a href="index.html">처음으로</a>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="js/signup.js"></script>
+  </body>
+</html>

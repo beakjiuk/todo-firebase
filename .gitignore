@@ -1,0 +1,16 @@
+# Firebase 웹 설정 — 실제 키는 절대 커밋하지 않음
+js/firebase-config.js
+
+# 로컬 비밀값·환경
+.env
+.env.*
+!.env.example
+*.local.json
+
+# OS / 에디터
+.DS_Store
+Thumbs.db
+*.log
+.cursor/
+.idea/
+*.swp

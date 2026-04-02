@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>일정관리앱</title>
+    <link rel="stylesheet" href="css/landing.css" />
+  </head>
+  <body class="landing-body">
+    <!-- 1) 유튜브 인트로 -->
+    <section id="videoIntro" class="video-intro" aria-label="인트로 영상">
+      <div class="video-intro__stack">
+        <div class="video-intro__toolbar">
+          <button
+            type="button"
+            class="video-intro__skip"
+            id="skipVideo"
+            lang="en"
+            aria-label="Skip intro video"
+          >
+            Skip
+          </button>
+        </div>
+        <div class="video-intro__frame">
+          <iframe
+            id="ytEmbed"
+            title="인트로 영상"
+            src="https://www.youtube.com/embed/AlxNuMXkKqM?enablejsapi=1&amp;rel=0&amp;modestbranding=1&amp;playsinline=1&amp;autoplay=1&amp;mute=0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+      <p class="video-intro__hint">인트로 영상은 기본 볼륨 38%로 재생됩니다. 일부 브라우저는 소리 있는 자동 재생을 제한할 수 있어요.</p>
+    </section>
+
+    <!-- 2) 랜딩 (영상 후) -->
+    <main id="mainLanding" class="main-landing is-hidden" aria-live="polite">
+      <div class="hero">
+        <div class="hero-visual">
+          <div class="hero-deco" aria-hidden="true"></div>
+          <div class="hero-card-ui" aria-hidden="true">
+            <span class="hero-card-ui__check"></span>
+            <span class="hero-card-ui__line"></span>
+            <span class="hero-card-ui__line hero-card-ui__line--short"></span>
+          </div>
+          <div class="hero-character-wrap">
+            <div class="hero-character" aria-hidden="true">
+              <div class="hero-character__bob">
+                <svg viewBox="0 0 120 180" width="140" height="210" xmlns="http://www.w3.org/2000/svg">
+                  <ellipse cx="60" cy="168" rx="44" ry="11" fill="rgba(30,41,59,0.1)" />
+                  <g class="swing-l">
+                    <rect x="40" y="118" width="16" height="44" rx="8" fill="#334155" />
+                  </g>
+                  <g class="swing-r">
+                    <rect x="62" y="118" width="16" height="44" rx="8" fill="#1e293b" />
+                  </g>
+                  <rect
+                    x="22"
+                    y="52"
+                    width="76"
+                    height="82"
+                    rx="30"
+                    fill="#fef3c7"
+                    stroke="#d97706"
+                    stroke-width="3"
+                  />
+                  <circle cx="46" cy="80" r="7" fill="#0f172a" />
+                  <circle cx="76" cy="80" r="7" fill="#0f172a" />
+                  <path
+                    d="M48 108 Q60 118 72 108"
+                    stroke="#0f172a"
+                    stroke-width="3"
+                    fill="none"
+                    stroke-linecap="round"
+                  />
+                  <ellipse cx="60" cy="30" rx="22" ry="16" fill="#6366f1" />
+                  <g class="wave-arm">
+                    <path
+                      d="M94 70 Q118 52 122 28"
+                      stroke="#fde68a"
+                      stroke-width="12"
+                      fill="none"
+                      stroke-linecap="round"
+                    />
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-copy">
+          <h1 class="hero-title">
+            <span class="hero-title__line hero-title__a">일정관리의 모든 것!</span>
+            <span class="hero-title__line hero-title__b">시작하게</span>
+          </h1>
+          <p class="hero-sub">캘린더로 할 일을 모아 두고, 하루를 가볍게 시작해 보세요.</p>
+          <a class="btn-hero" id="btnStart" href="login.html">시작하기</a>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      function onYouTubeIframeAPIReady() {
+        window.dispatchEvent(new CustomEvent("youtube-iframe-api-ready"));
+      }
+    </script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="js/landing.js" defer></script>
+  </body>
+</html>
