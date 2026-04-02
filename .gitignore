@@ -7,6 +7,8 @@ js/firebase-config.js
 !.env.example
 *.local.json
 
+node_modules/
+
 # OS / 에디터
 .DS_Store
 Thumbs.db

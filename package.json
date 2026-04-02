@@ -1,0 +1,11 @@
+{
+  "name": "todo-firebase",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/write-firebase-config.mjs",
+    "vercel-build": "npm run build"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

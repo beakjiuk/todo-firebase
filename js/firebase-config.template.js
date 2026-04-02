@@ -1,6 +1,11 @@
 /**
- * Copy this file to firebase-config.js and fill in your Firebase web app values.
- * firebase-config.js is gitignored — do not commit real keys.
+ * 로컬: 이 파일을 복사해 js/firebase-config.js 로 저장한 뒤 값을 채우세요 (git 에 올리지 않음).
+ *
+ * Vercel: 환경 변수만 설정하면 빌드 시 firebase-config.js 가 생성됩니다.
+ * 이름: FIREBASE_API_KEY, FIREBASE_AUTH_DOMAIN, FIREBASE_PROJECT_ID,
+ *       FIREBASE_STORAGE_BUCKET, FIREBASE_MESSAGING_SENDER_ID, FIREBASE_APP_ID,
+ *       FIREBASE_DATABASE_URL
+ * 자세한 설정: 저장소 루트의 VERCEL.md
  */
 export const firebaseConfig = {
   apiKey: "YOUR_API_KEY",
